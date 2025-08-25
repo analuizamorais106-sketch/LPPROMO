@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ODuo • Planos de Aceleração para Locadoras</title>
+  <meta name="description" content="R$ 1.000 OFF + Raio X gratuito. Planos de aceleração para locadoras de máquinas e equipamentos. Últimas vagas do mês.">
+  <style>
+    :root{
+      --bg1:#1a2a6c; --bg2:#b21f1f; --bg3:#fdbb2d;
+      --primary:#7c3aed; --accent:#ff9d00; --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
+      --text:#0f172a; --muted:#64748b; --card: #ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2) 60%,var(--bg3));color:#fff}
+    .container{max-width:1200px;margin:0 auto;padding:24px 20px}
+    .grid{display:grid;grid-template-columns:1fr;gap:28px}
+    @media(min-width:992px){.grid{grid-template-columns:1.05fr .95fr}}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);font-weight:700}
+    h1{font-size:42px;line-height:1.1;margin:14px 0 6px}
+    @media(min-width:992px){h1{font-size:58px}}
+    .accent{color:#FFC82C}
+    p.lead{font-size:20px;opacity:.95}
+    .cta{display:inline-flex;gap:10px;align-items:center;background:var(--success);border:none;color:#fff;padding:14px 22px;border-radius:12px;font-weight:800;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+    .note{background:rgba(34,197,94,.18);border:1px solid rgba(34,197,94,.35);padding:14px;border-radius:12px;max-width:540px}
+    .hero{position:relative;overflow:hidden;padding:56px 0}
+    .hero .img{width:100%;height:auto;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+    .timer{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .tbox{background:rgba(0,0,0,.28);padding:10px 12px;border-radius:10px;text-align:center;min-width:86px}
+    .tbox b{display:block;font-size:24px}
+    section.block{background:#fff;color:var(--text)}
+    .block .container{padding:60px 20px}
+    .title{font-size:34px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px;box-shadow:0 4px 16px rgba(2,6,23,.06)}
+    .icon{width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:900}
+    .list{display:grid;grid-template-columns:1fr;gap:10px}
+    .li{display:flex;gap:10px;align-items:flex-start}
+    .check{color:#16a34a}
+    .strip{background:rgba(245,158,11,.08);border-top:1px dashed rgba(245,158,11,.6);border-bottom:1px dashed rgba(245,158,11,.6)}
+    .faq{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:900px){.faq{grid-template-columns:1fr 1fr}}
+    details{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+    summary{cursor:pointer;font-weight:700}
+    footer{background:#0b1220;color:#d1d5db}
+    footer .container{padding:40px 20px;text-align:center}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.35);font-weight:800;color:#fff}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="badge">🔥 ÚLTIMA CHANCE DO MÊS — SÓ ATÉ 31/08</div>
+          <h1><span class="accent">R$ 1.000 OFF</span><br/>+ Upgrade Gratuito</h1>
+          <p class="lead">Planos de <b class="accent">aceleração</b> para locadoras de máquinas e equipamentos</p>
+
+          <div class="note">
+            <p style="margin:0 0 6px 0;font-weight:800">🎯 <span style="color:#16a34a">BÔNUS EXCLUSIVO:</span> Fechou hoje?</p>
+            <p style="margin:0">Ganha nosso <b>Raio X de Conversões</b> gratuito (valor R$ 800)</p>
+          </div>
+
+          <p style="margin:16px 0 18px 0;opacity:.95">A ODuo é a única agência especializada 100% no seu setor. Últimas vagas do mês!</p>
+
+          <button class="cta" onclick="window.open('https://wa.me/5511999999999?text=Olá! Quero garantir minha vaga com desconto de R$ 1.000 + upgrade gratuito do Raio X de Conversões. Fechando hoje!','_blank')">
+            📞 Garantir Minha Vaga + Bônus Hoje
+          </button>
+
+          <div id="timer" class="timer" aria-live="polite" role="status"></div>
+          <small style="opacity:.85">⏰ Só até 31/08 ou enquanto durar as 7 vagas restantes</small>
+        </div>
+
+        <div>
+          <img src="hero-equipamentos.webp" alt="Equipamentos de construção para locação" class="img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="block">
+    <div class="container">
+      <h2 class="title">Por que escolher a <span style="color:var(--primary)">ODuo</span>?</h2>
+      <p class="muted">Restam apenas <b style="color:var(--warning)">7 vagas</b> para os planos de aceleração deste mês</p>
+      <div class="cards" style="margin-top:18px">
+        <div class="card">
+          <div class="icon">↑</div>
+          <h3>Mais Demanda</h3>
+          <p class="muted">Faturamento previsível com leads qualificados que viram contratos reais.</p>
+        </div>
+        <div class="card">
+          <div class="icon">◎</div>
+          <h3>Autoridade Digital</h3>
+          <p class="muted">Dominância no Google e redes sociais na sua região.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Gestão Completa</h3>
+          <p class="muted">Google Ads, Meta Ads, SEO e automações integradas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="block">
+    <div class="container">
+      <h2 class="title">Como funciona</h2>
+      <div class="list" style="margin-top:10px">
+        <div class="li"><span class="check">✅</span>Raio-X inicial: diagnóstico do funil e canais.</div>
+        <div class="li"><span class="check">✅</span>Setup: campanhas Google/Meta + SEO local + páginas.</div>
+        <div class="li"><span class="check">✅</span>Rotina quinzenal: otimizações, relatórios e alinhamentos.</div>
+        <div class="li"><span class="check">✅</span>Automação comercial: SLAs, follow-up e métricas.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA / URGÊNCIA -->
+  <section class="block strip">
+    <div class="container" style="text-align:center">
+      <div class="chip">🚨 ÚLTIMAS 7 VAGAS DO MÊS</div>
+      <h2 class="title" style="margin-top:10px"><span style="color:var(--warning)">R$ 1.000 OFF</span> + Raio X gratuito</h2>
+      <p class="muted" style="margin-bottom:18px">Válido só até <b>31/08</b> ou enquanto durar as vagas.</p>
+
+      <div class="card" style="display:inline-block; text-align:left;">
+        <h3 style="margin:4px 0 10px 0">O que está incluso</h3>
+        <div class="list">
+          <div class="li"><span class="check">✅</span>Google Ads + Meta Ads otimizados</div>
+          <div class="li"><span class="check">✅</span>SEO local + Google Meu Negócio</div>
+          <div class="li"><span class="check">✅</span>Landing pages otimizadas</div>
+          <div class="li"><span class="check">✅</span>Automações de vendas</div>
+          <div class="li"><span class="check">✅</span>Relatórios de conversão em tempo real</div>
+          <div class="li"><span class="check">✅</span>Suporte especializado em locadoras</div>
+          <div class="li"><span class="check" style="color:var(--warning)">⭐</span><b>BÔNUS:</b> Raio X de Conversões (R$ 800)</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <button class="cta" onclick="window.open('https://wa.me/5511999999999?text=Quero garantir minha vaga com R$1.000 OFF + Raio X gratuito!','_blank')">📞 Garantir Última Vaga + Bônus</button>
+      </div>
+
+      <div style="margin-top:14px" id="timer2" class="timer"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="container">
+      <h2 class="title">Perguntas frequentes</h2>
+      <div class="faq" style="margin-top:10px">
+        <details><summary>Funciona para locadoras pequenas?</summary><p class="muted">Sim — ajustamos metas e orçamento ao seu estágio, mantendo a estrutura profissional.</p></details>
+        <details><summary>Qual o prazo para ver resultados?</summary><p class="muted">Em média, primeiros leads qualificados em 7–14 dias após o go-live das campanhas.</p></details>
+        <details><summary>Vocês ajudam no comercial?</summary><p class="muted">Sim. Roteiros, SLAs, automações e acompanhamento quinzenal para time interno.</p></details>
+        <details><summary>Tem fidelidade?</summary><p class="muted">Sem letra miúda: planos mensais com meta, transparência e foco em ROI.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <h3 style="margin:0 0 4px 0">ODuo Assessoria de Marketing</h3>
+      <p style="margin:0 0 6px 0; opacity:.8">Especialistas em locadoras de máquinas e equipamentos</p>
+      <small style="opacity:.7">© 2025 ODuo Assessoria. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Contagem regressiva até 31/08/2025 23:59:59 America/Sao_Paulo
+    // (ajuste de fuso aproximado: -03:00; para horário de verão inexistente no BR atual)
+    const target = new Date(Date.UTC(2025,7,31,23+3,59,59));
+    const els = [document.getElementById('timer'), document.getElementById('timer2')];
+    const fmt = n => String(n).padStart(2,'0');
+    function render(leftMs){
+      const s = Math.max(0, Math.floor(leftMs/1000));
+      const d = Math.floor(s/86400);
+      const h = Math.floor((s%86400)/3600);
+      const m = Math.floor((s%3600)/60);
+      const sec = s%60;
+      const html = `
+        <div class="tbox"><b>${fmt(d)}</b><span>Dias</span></div>
+        <div class="tbox"><b>${fmt(h)}</b><span>Hrs</span></div>
+        <div class="tbox"><b>${fmt(m)}</b><span>Min</span></div>
+        <div class="tbox"><b>${fmt(sec)}</b><span>Seg</span></div>`;
+      els.forEach(e=>{ if(e) e.innerHTML = html; });
+    }
+    function tick(){
+      render(target - new Date());
+    }
+    tick(); setInterval(tick,1000);
+  </script>
+</body>
+</html>
