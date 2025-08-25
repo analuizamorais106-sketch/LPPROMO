@@ -1,0 +1,249 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import CountdownTimer from "@/components/CountdownTimer";
+import { CheckCircle, Phone, Users, TrendingUp, Target, BarChart3 } from "lucide-react";
+
+const Index = () => {
+  // Contagem real até 31/08/2025 23:59 (mês é zero-based: 7 = agosto)
+  const endDate = new Date(2025, 7, 31, 23, 59, 59);
+
+  // Simular vagas restantes (em produção viria de uma API)
+  const vagasRestantes = 7;
+
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/5511999999999?text=Olá! Quero garantir minha vaga com desconto de R$ 1.000 + upgrade gratuito do Raio X de Conversões. Fechando hoje!",
+      "_blank"
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-hero py-16 px-4 lg:py-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left space-y-6">
+              <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-semibold border border-destructive/20 animate-pulse">
+                🔥 ÚLTIMA CHANCE DO MÊS - SÓ ATÉ 31/08
+              </div>
+
+              <div className="inline-flex items-center gap-2 bg-warning/10 text-warning px-4 py-2 rounded-full text-xs font-bold border border-warning/20 ml-2">
+                ⚠️ RESTAM APENAS {vagasRestantes} VAGAS
+              </div>
+
+              <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
+                <span className="text-accent">R$ 1.000 OFF</span><br />
+                + Upgrade Gratuito
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-white/90 font-medium">
+                Planos de <span className="text-accent font-bold">aceleração</span> para locadoras de máquinas e equipamentos
+              </p>
+
+              <div className="bg-success/20 border border-success/30 rounded-lg p-4 max-w-xl">
+                <p className="text-lg text-white font-semibold mb-2">
+                  🎯 <span className="text-success">BONUS EXCLUSIVO:</span> Fechou hoje?
+                </p>
+                <p className="text-white/90">
+                  Ganha nosso <strong>Raio X de Conversões</strong> gratuito (valor R$ 800)
+                </p>
+              </div>
+
+              <p className="text-lg text-white/80 max-w-xl">
+                A ODuo é a única agência especializada 100% no seu setor. Últimas vagas do mês!
+              </p>
+
+              <Button
+                variant="whatsapp"
+                size="xl"
+                onClick={handleWhatsAppClick}
+                className="w-full lg:w-auto text-lg px-8 py-4"
+              >
+                <Phone className="w-5 h-5" />
+                Garantir Minha Vaga + Bonus Hoje
+              </Button>
+
+              <div className="text-center lg:text-left">
+                <CountdownTimer targetDate={endDate} className="mt-6" />
+                <p className="text-sm text-white/70 mt-3">⏰ Só até 31/08 ou enquanto durar as {vagasRestantes} vagas restantes</p>
+              </div>
+            </div>
+
+            <div className="hidden lg:block">
+              <img
+                src="/hero-equipamentos.webp"  // arquivo em /public
+                alt="Equipamentos de construção para locação"
+                className="w-full h-auto rounded-2xl shadow-hero"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefícios Section */}
+      <section className="py-16 px-4 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Por que escolher a <span className="text-primary">ODuo</span>?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Restam apenas <span className="font-bold text-warning">{vagasRestantes} vagas</span> para os planos de aceleração deste mês
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center p-6 hover:shadow-card transition-shadow border-primary/10">
+              <CardContent className="p-0">
+                <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Mais Demanda</h3>
+                <p className="text-muted-foreground text-sm">Faturamento previsível com leads qualificados que viram contratos reais</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-6 hover:shadow-card transition-shadow border-primary/10">
+              <CardContent className="p-0">
+                <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Autoridade Digital</h3>
+                <p className="text-muted-foreground text-sm">Dominância no Google e redes sociais na sua região</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-6 hover:shadow-card transition-shadow border-primary/10">
+              <CardContent className="p-0">
+                <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Leads Qualificados</h3>
+                <p className="text-muted-foreground text-sm">Funil de vendas testado especificamente para o setor de locação</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-6 hover:shadow-card transition-shadow border-primary/10">
+              <CardContent className="p-0">
+                <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Gestão Completa</h3>
+                <p className="text-muted-foreground text-sm">Google Ads, Meta Ads, SEO e automações integradas</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Oferta com Urgência */}
+      <section className="py-16 px-4 bg-warning/5 border-y border-warning/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-destructive text-destructive-foreground px-4 py-2 rounded-full text-sm font-bold mb-4 animate-pulse">
+              🚨 ÚLTIMAS {vagasRestantes} VAGAS DO MÊS
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              <span className="text-warning">R$ 1.000 OFF</span> + Raio X Gratuito
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              Última chance do mês! Válido só até <strong>31/08</strong> ou enquanto durar as vagas
+            </p>
+
+            <div className="bg-success/10 border border-success/20 rounded-lg p-4 mb-6 max-w-md mx-auto">
+              <h4 className="font-bold text-success mb-2">🎯 FECHOU HOJE? GANHE:</h4>
+              <p className="text-sm text-muted-foreground">
+                <strong>Raio X de Conversões</strong> gratuito - análise completa do seu funil (valor R$ 800)
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-card rounded-xl p-6 shadow-card border border-warning/20 mb-8">
+            <h3 className="text-xl font-bold mb-4">O que está incluso:</h3>
+            <div className="grid md:grid-cols-2 gap-4 text-left">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>Google Ads + Meta Ads otimizados</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>SEO local + Google Meu Negócio</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>Landing pages otimizadas</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>Automações de vendas</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>Relatórios de conversão em tempo real</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-warning mt-0.5 flex-shrink-0" />
+                <span><strong>BONUS:</strong> Raio X de Conversões (R$ 800)</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                <span>Suporte especializado em locadoras</span>
+              </div>
+            </div>
+          </div>
+
+          <CountdownTimer targetDate={endDate} className="mb-8" />
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-16 px-4 bg-gradient-hero">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-destructive/20 border border-destructive/30 rounded-lg p-4 mb-6 inline-block">
+            <p className="text-white font-bold">⚠️ RESTAM APENAS {vagasRestantes} VAGAS PARA AGOSTO</p>
+          </div>
+
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            Não perca sua vaga!
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Últimas vagas do mês com desconto máximo + Raio X gratuito.
+            <strong> Garantia total ou devolvemos seu investimento.</strong>
+          </p>
+
+          <Button
+            variant="whatsapp"
+            size="xl"
+            onClick={handleWhatsAppClick}
+            className="text-lg px-12 py-4 mb-6"
+          >
+            <Phone className="w-6 h-6" />
+            Garantir Última Vaga + Bonus
+          </Button>
+
+          <div className="text-center">
+            <p className="text-sm text-white/70">
+              ✅ Sem compromisso • ✅ Raio X gratuito se fechar hoje • ✅ Resposta em até 1h
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground text-white py-8 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold mb-2">ODuo Assessoria de Marketing</h3>
+          <p className="text-white/70 mb-4">Especialistas exclusivos em locadoras de máquinas e equipamentos</p>
+          <p className="text-sm text-white/60">
+            © 2024 ODuo Assessoria. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
