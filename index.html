@@ -13,7 +13,7 @@
       --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
       --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px;
       --space-9: 40px; --space-10: 48px; --space-12: 56px; --space-14: 64px;
-      --round: 12px; --round-lg: 16px; --round-xl: 20px; --round-2xl: 24px;
+      --round: 12px; --round-lg: 16px; --round-xl: 20px;
 
       --bg1:#1a2a6c; --bg2:#b21f1f; --bg3:#fdbb2d;
       --primary:#7c3aed; --accent:#ff9d00; --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
@@ -48,6 +48,7 @@
       margin: var(--space-6) 0 var(--space-3);
       line-height:1.05; font-weight: 900;
       font-size: 38px;
+      text-wrap: balance;
     }
     @media(min-width:768px){ .headline{font-size:56px} }
     .accent{color:#FFC82C}
@@ -91,7 +92,7 @@
     .cards{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top: var(--space-6)}
     @media(min-width:900px){ .cards{grid-template-columns:repeat(3,1fr)} }
     .card{
-      background:#fff;border:1px solid #e5e7eb;border-radius: var(--round-xl);
+      background:#fff;border:1px solid #e5e7eb;border-radius: 16px;
       padding: var(--space-6);box-shadow: var(--shadow-soft); height:100%;
     }
     .icon{
@@ -113,7 +114,7 @@
     /* ===== FAQ / Footer ===== */
     .faq{display:grid;grid-template-columns:1fr;gap:12px;margin-top: var(--space-6)}
     @media(min-width:900px){ .faq{grid-template-columns:1fr 1fr} }
-    details{background:#fff;border:1px solid #e5e7eb;border-radius: var(--round-lg);padding: var(--space-4)}
+    details{background:#fff;border:1px solid #e5e7eb;border-radius: 12px;padding: var(--space-4)}
     summary{cursor:pointer;font-weight:700}
     footer{background:#0b1220;color:#d1d5db}
     footer .container{padding: var(--space-10) var(--space-6); text-align:center}
@@ -134,7 +135,7 @@
         <p style="margin:0">Ganha nosso <b>Raio X de Conversões</b> gratuito (valor R$ 800)</p>
       </div>
 
-      <button class="cta" onclick="window.open('https://wa.me/5519936195293?text=Olá! Quero garantir minha vaga com desconto de R$ 1.000 + upgrade gratuito do Raio X de Conversões. Fechando hoje!','_blank')">
+      <button class="cta" onclick="window.open('https://wa.me/5511999999999?text=Olá! Quero garantir minha vaga com desconto de R$ 1.000 + upgrade gratuito do Raio X de Conversões. Fechando hoje!','_blank')">
         📞 Garantir Minha Vaga + Bônus Hoje
       </button>
       <div id="timer" class="timer" aria-live="polite" role="status"></div>
@@ -202,11 +203,47 @@
       </div>
 
       <button class="cta" style="margin-top:var(--space-6)"
-        onclick="window.open('https://wa.me/5519936195293?text=Quero garantir minha vaga com R$1.000 OFF + Raio X gratuito!','_blank')">
+        onclick="window.open('https://wa.me/5511999999999?text=Quero garantir minha vaga com R$1.000 OFF + Raio X gratuito!','_blank')">
         📞 Garantir Última Vaga + Bônus
       </button>
 
       <div id="timer2" class="timer"></div>
+    </div>
+  </section>
+
+  <!-- BÔNUS DESTACADO (layout do print) -->
+  <section class="block" style="background:#f9fafb">
+    <div class="container center" style="flex-direction:column">
+
+      <div style="
+        width:100%;max-width:880px;text-align:left;background:#001326;
+        border:2px solid #9333ea;border-radius:12px;
+        box-shadow:0 10px 30px rgba(2,6,23,.2);
+        padding:28px 24px;position:relative;overflow:hidden;color:#fff">
+
+        <h2 style="margin:0 0 12px 0;text-align:center;font-weight:800;color:#f59e0b">
+          RAIO-X DE CONVERSÕES
+        </h2>
+
+        <ul style="list-style:disc;padding-left:24px;line-height:1.6;font-size:16px">
+          <li>Cliente Oculto</li>
+          <li>Acompanhamento dos atendimentos</li>
+          <li>Avaliação dos atendimentos comerciais em tempo real</li>
+          <li>Relatórios mostrando o que está funcionando ou falhando</li>
+          <li>Envio ao gestor para ajustar comportamento dos vendedores</li>
+        </ul>
+
+        <p style="margin-top:14px;font-size:14px;opacity:.9;text-align:center">
+          <b>Valor real R$ 800</b> — incluso gratuitamente para quem fechar até <b>31/08</b>.
+        </p>
+      </div>
+
+      <button class="cta" style="margin-top:20px"
+        onclick="window.open('https://wa.me/5511999999999?text=Quero garantir minha vaga com R$1.000 OFF + Raio X gratuito!','_blank')">
+        📞 Garantir Bônus + Desconto Agora
+      </button>
+
+      <div id="timer3" class="timer"></div>
     </div>
   </section>
 
@@ -236,7 +273,11 @@
     // Contagem regressiva até 31/08/2025 23:59:59 (America/Sao_Paulo)
     // Ajuste simples de fuso: -03:00 (UTC-3)
     const target = new Date(Date.UTC(2025,7,31,23+3,59,59));
-    const timers = [document.getElementById('timer'), document.getElementById('timer2')];
+    const timers = [
+      document.getElementById('timer'),
+      document.getElementById('timer2'),
+      document.getElementById('timer3')
+    ];
     const fmt = n => String(n).padStart(2,'0');
 
     function render(ms){
