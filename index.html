@@ -7,19 +7,26 @@
   <meta name="description" content="R$ 1.000 OFF + Raio X gratuito. Planos de aceleração para locadoras de máquinas e equipamentos. Últimas vagas do mês.">
 
   <style>
-    /* ===== Design tokens ===== */
+    /* ====== Brand tokens (AZUL + LARANJA) ====== */
     :root{
       --container: 1120px;
-      --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
-      --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px;
-      --space-9: 40px; --space-10: 48px; --space-12: 56px; --space-14: 64px;
-      --round: 12px; --round-lg: 16px; --round-xl: 20px;
 
-      --bg1:#1a2a6c; --bg2:#b21f1f; --bg3:#fdbb2d;
-      --primary:#7c3aed; --accent:#ff9d00; --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
-      --ink:#0f172a; --muted:#64748b; --card:#ffffff;
+      /* espaçamentos */
+      --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+      --space-6: 24px; --space-7: 28px; --space-8: 32px; --space-10: 48px; --space-12: 56px; --space-14: 64px;
+
+      /* marca */
+      --navy-900:#081a2f;     /* fundo principal */
+      --navy-800:#0b1f3a;     /* tons de cards escuros */
+      --navy-700:#0f2747;
+      --orange-500:#ff8a00;   /* destaque/cta */
+      --orange-600:#e67d00;
+      --orange-300:#ffc27a;
+
+      --ink:#0f172a; --muted:#64748b; --white:#ffffff;
       --shadow: 0 10px 30px rgba(0,0,0,.22);
       --shadow-soft: 0 6px 18px rgba(2,6,23,.08);
+      --radius: 12px; --radius-lg: 16px; --radius-xl: 20px;
     }
 
     /* ===== Base ===== */
@@ -28,101 +35,110 @@
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg,var(--bg1),var(--bg2) 60%,var(--bg3));
+      background: radial-gradient(1200px 600px at 15% -10%, rgba(255,138,0,.25), transparent 60%),
+                  radial-gradient(1200px 600px at 85% 110%, rgba(255,138,0,.20), transparent 60%),
+                  linear-gradient(135deg,var(--navy-900),var(--navy-700) 60%, var(--orange-300));
       color:#fff;
     }
     .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-6)}
     .center{display:flex;justify-content:center;text-align:center}
 
-    /* ===== Hero ===== */
+    /* ===== Hero (sem imagem) ===== */
     .hero{padding: var(--space-14) 0 var(--space-12)}
     .badge{
-      display:inline-flex;gap:var(--space-3);align-items:center;
-      padding: var(--space-2) var(--space-4);
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.22);
+      display:inline-flex;gap:10px;align-items:center;
+      padding: 6px 14px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
       background: rgba(255,255,255,.08);
-      font-weight:700; font-size: 14px;
+      font-weight:700; font-size:14px;
     }
     .headline{
-      margin: var(--space-6) 0 var(--space-3);
-      line-height:1.05; font-weight: 900;
-      font-size: 38px;
-      text-wrap: balance;
+      margin: 22px 0 10px; line-height:1.05; font-weight:900;
+      font-size: 40px; text-wrap:balance;
     }
     @media(min-width:768px){ .headline{font-size:56px} }
-    .accent{color:#FFC82C}
+    .accent{color:var(--orange-300)}
     .lead{font-size:18px;opacity:.95;margin:0 0 var(--space-6)}
     @media(min-width:768px){ .lead{font-size:22px} }
 
     .note{
       margin: var(--space-6) auto var(--space-4);
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.35);
-      padding: var(--space-5);
-      border-radius: var(--round-lg);
-      max-width: 640px;
+      background: rgba(255,138,0,.12);
+      border:1px solid rgba(255,138,0,.35);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      max-width: 680px;
       text-align:left;
     }
+
+    /* CTA agora em LARANJA */
     .cta{
       display:inline-flex;gap:10px;align-items:center;justify-content:center;
-      background:var(--success); border:none; color:#fff;
-      padding: 14px 28px; border-radius: var(--round-xl);
+      background: linear-gradient(180deg, var(--orange-500), var(--orange-600));
+      border:1px solid rgba(0,0,0,.05);
+      color:#fff; padding:14px 28px; border-radius: var(--radius-xl);
       font-weight:800; font-size:18px; cursor:pointer; box-shadow: var(--shadow);
+      transition: transform .06s ease-in-out, filter .2s;
     }
+    .cta:hover{ filter:brightness(.97); transform: translateY(-1px); }
+
     .below-cta{margin-top: var(--space-4); opacity:.85}
 
-    /* ===== Timer ===== */
+    /* ===== Timer com cartela navy ===== */
     .timer{display:flex;gap:var(--space-3);margin-top: var(--space-5);flex-wrap:wrap;justify-content:center}
     .tbox{
-      background: rgba(0,0,0,.25);
-      padding: var(--space-3) var(--space-4);
-      border-radius: var(--round);
-      min-width: 86px; text-align:center;
+      background: rgba(8,26,47,.55);
+      padding: 12px 16px; border-radius: 14px; min-width: 86px; text-align:center;
+      border:1px solid rgba(255,255,255,.08);
+      color: #fff;
     }
-    .tbox b{display:block;font-size:24px}
+    .tbox b{display:block;font-size:24px;color:var(--orange-300)}
     .tbox span{font-size:12px;opacity:.9}
 
     /* ===== Blocks ===== */
     section.block{background:#fff;color:var(--ink)}
     .block .container{padding: var(--space-12) var(--space-6)}
-    .title{font-size:28px;margin:0 0 var(--space-2)}
+    .title{font-size:28px;margin:0 0 8px}
     @media(min-width:768px){ .title{font-size:34px} }
     .muted{color:var(--muted)}
-    .cards{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top: var(--space-6)}
+    .cards{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top: var(--space-6)}
     @media(min-width:900px){ .cards{grid-template-columns:repeat(3,1fr)} }
     .card{
       background:#fff;border:1px solid #e5e7eb;border-radius: 16px;
-      padding: var(--space-6);box-shadow: var(--shadow-soft); height:100%;
+      padding: 22px; box-shadow: var(--shadow-soft); height:100%;
     }
     .icon{
-      width:46px;height:46px;border-radius:999px;margin-bottom: var(--space-4);
+      width:46px;height:46px;border-radius:999px;margin-bottom: 10px;
       display:flex;align-items:center;justify-content:center;
-      background: linear-gradient(135deg,#7c3aed,#a855f7); color:#fff; font-weight:900;
+      background: linear-gradient(135deg,var(--orange-500),#ffae42); color:#fff; font-weight:900;
     }
 
-    /* ===== Offer strip ===== */
-    .strip{background: rgba(245,158,11,.08); border-top:1px dashed rgba(245,158,11,.45); border-bottom:1px dashed rgba(245,158,11,.45)}
+    /* ===== Offer strip (navy + orange) ===== */
+    .strip{
+      background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+      border-top:1px dashed rgba(255,138,0,.45);
+      border-bottom:1px dashed rgba(255,138,0,.45)
+    }
     .chip{
       display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
-      background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.35);font-weight:800;color:#b91c1c
+      background:rgba(255,138,0,.12);border:1px solid rgba(255,138,0,.35);font-weight:800;color:#b45309
     }
     .list{display:grid;grid-template-columns:1fr;gap:10px}
     .li{display:flex;gap:10px;align-items:flex-start}
-    .check{color:#16a34a}
+    .check{color:#0ea5e9}
 
     /* ===== FAQ / Footer ===== */
     .faq{display:grid;grid-template-columns:1fr;gap:12px;margin-top: var(--space-6)}
     @media(min-width:900px){ .faq{grid-template-columns:1fr 1fr} }
     details{background:#fff;border:1px solid #e5e7eb;border-radius: 12px;padding: var(--space-4)}
     summary{cursor:pointer;font-weight:700}
-    footer{background:#0b1220;color:#d1d5db}
+    footer{background:var(--navy-900);color:#d1d5db}
     footer .container{padding: var(--space-10) var(--space-6); text-align:center}
   </style>
 </head>
 <body>
 
-  <!-- HERO (imagem removida) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container center" style="flex-direction:column;align-items:center">
       <div class="badge">🔥 ÚLTIMA CHANCE DO MÊS — SÓ ATÉ 31/08</div>
@@ -131,8 +147,8 @@
       <p class="lead">Planos de <b class="accent">aceleração</b> para locadoras de máquinas e equipamentos</p>
 
       <div class="note">
-        <p style="margin:0 0 6px 0;font-weight:800">🎯 <span style="color:#16a34a">BÔNUS EXCLUSIVO:</span> Fechou hoje?</p>
-        <p style="margin:0">Ganha nosso <b>Raio X de Conversões</b> gratuito (valor R$ 800)</p>
+        <p style="margin:0 0 6px 0;font-weight:800;color:var(--orange-300)">🎯 BÔNUS EXCLUSIVO: Fechou hoje?</p>
+        <p style="margin:0;color:#fff">Ganha nosso <b>Raio X de Conversões</b> gratuito (valor R$ 800)</p>
       </div>
 
       <button class="cta" onclick="window.open('https://wa.me/5511999999999?text=Olá! Quero garantir minha vaga com desconto de R$ 1.000 + upgrade gratuito do Raio X de Conversões. Fechando hoje!','_blank')">
@@ -146,23 +162,23 @@
   <!-- BENEFÍCIOS -->
   <section class="block">
     <div class="container">
-      <h2 class="title">Por que escolher a <span style="color:var(--primary)">ODuo</span>?</h2>
-      <p class="muted">Restam apenas <b style="color:var(--warning)">7 vagas</b> para os planos de aceleração deste mês</p>
+      <h2 class="title">Por que escolher a <span style="color:var(--orange-500)">ODuo</span>?</h2>
+      <p class="muted">Restam apenas <b style="color:var(--orange-500)">7 vagas</b> para os planos de aceleração deste mês</p>
 
       <div class="cards">
         <div class="card">
           <div class="icon">↑</div>
-          <h3 style="margin:.25rem 0 .5rem 0">Mais Demanda</h3>
+          <h3 style="margin:.25rem 0 .5rem 0;color:var(--navy-900)">Mais Demanda</h3>
           <p class="muted">Faturamento previsível com leads qualificados que viram contratos reais.</p>
         </div>
         <div class="card">
           <div class="icon">◎</div>
-          <h3 style="margin:.25rem 0 .5rem 0">Autoridade Digital</h3>
+          <h3 style="margin:.25rem 0 .5rem 0;color:var(--navy-900)">Autoridade Digital</h3>
           <p class="muted">Dominância no Google e redes sociais na sua região.</p>
         </div>
         <div class="card">
           <div class="icon">📊</div>
-          <h3 style="margin:.25rem 0 .5rem 0">Gestão Completa</h3>
+          <h3 style="margin:.25rem 0 .5rem 0;color:var(--navy-900)">Gestão Completa</h3>
           <p class="muted">Google Ads, Meta Ads, SEO e automações integradas.</p>
         </div>
       </div>
@@ -186,11 +202,11 @@
   <section class="block strip">
     <div class="container center" style="flex-direction:column">
       <div class="chip">🚨 ÚLTIMAS 7 VAGAS DO MÊS</div>
-      <h2 class="title" style="margin-top:10px"><span style="color:var(--warning)">R$ 1.000 OFF</span> + Raio X gratuito</h2>
+      <h2 class="title" style="margin-top:10px;color:var(--navy-900)"><span style="color:var(--orange-500)">R$ 1.000 OFF</span> + Raio X gratuito</h2>
       <p class="muted" style="margin-bottom:var(--space-6)">Válido só até <b>31/08</b> ou enquanto durar as vagas.</p>
 
       <div class="card" style="max-width:720px;text-align:left">
-        <h3 style="margin:4px 0 10px 0">O que está incluso</h3>
+        <h3 style="margin:4px 0 10px 0;color:var(--navy-900)">O que está incluso</h3>
         <div class="list">
           <div class="li"><span class="check">✅</span>Google Ads + Meta Ads otimizados</div>
           <div class="li"><span class="check">✅</span>SEO local + Google Meu Negócio</div>
@@ -198,7 +214,7 @@
           <div class="li"><span class="check">✅</span>Automações de vendas</div>
           <div class="li"><span class="check">✅</span>Relatórios de conversão em tempo real</div>
           <div class="li"><span class="check">✅</span>Suporte especializado em locadoras</div>
-          <div class="li"><span class="check" style="color:var(--warning)">⭐</span><b>BÔNUS:</b> Raio X de Conversões (R$ 800)</div>
+          <div class="li"><span class="check">⭐</span><b>BÔNUS:</b> Raio X de Conversões (R$ 800)</div>
         </div>
       </div>
 
@@ -211,21 +227,21 @@
     </div>
   </section>
 
-  <!-- BÔNUS DESTACADO (layout do print) -->
-  <section class="block" style="background:#f9fafb">
+  <!-- BÔNUS DESTACADO (centralizado) -->
+  <section class="block" style="background:#f6f7fb">
     <div class="container center" style="flex-direction:column">
 
       <div style="
-        width:100%;max-width:880px;text-align:left;background:#001326;
-        border:2px solid #9333ea;border-radius:12px;
-        box-shadow:0 10px 30px rgba(2,6,23,.2);
-        padding:28px 24px;position:relative;overflow:hidden;color:#fff">
+        width:100%;max-width:900px;text-align:center;background:var(--navy-800);
+        border:2px solid #9333ea;border-radius:14px;
+        box-shadow:0 12px 32px rgba(2,6,23,.25);
+        padding:30px 26px;position:relative;overflow:hidden;color:#fff">
 
-        <h2 style="margin:0 0 12px 0;text-align:center;font-weight:800;color:#f59e0b">
-          RAIO-X DE CONVERSÕES
-        </h2>
+        <h2 style="margin:0 0 14px 0;font-weight:900;color:var(--orange-300)">RAIO-X DE CONVERSÕES</h2>
 
-        <ul style="list-style:disc;padding-left:24px;line-height:1.6;font-size:16px">
+        <ul style="
+          list-style:disc; list-style-position: inside;
+          padding-left:0; margin:0 auto 14px; line-height:1.65; font-size:16px; max-width:760px; text-align:center;">
           <li>Cliente Oculto</li>
           <li>Acompanhamento dos atendimentos</li>
           <li>Avaliação dos atendimentos comerciais em tempo real</li>
@@ -233,7 +249,7 @@
           <li>Envio ao gestor para ajustar comportamento dos vendedores</li>
         </ul>
 
-        <p style="margin-top:14px;font-size:14px;opacity:.9;text-align:center">
+        <p style="margin-top:10px;font-size:15px;opacity:.95">
           <b>Valor real R$ 800</b> — incluso gratuitamente para quem fechar até <b>31/08</b>.
         </p>
       </div>
@@ -271,13 +287,8 @@
 
   <script>
     // Contagem regressiva até 31/08/2025 23:59:59 (America/Sao_Paulo)
-    // Ajuste simples de fuso: -03:00 (UTC-3)
     const target = new Date(Date.UTC(2025,7,31,23+3,59,59));
-    const timers = [
-      document.getElementById('timer'),
-      document.getElementById('timer2'),
-      document.getElementById('timer3')
-    ];
+    const timers = [document.getElementById('timer'), document.getElementById('timer2'), document.getElementById('timer3')];
     const fmt = n => String(n).padStart(2,'0');
 
     function render(ms){
@@ -293,8 +304,8 @@
         <div class="tbox"><b>${fmt(sec)}</b><span>Seg</span></div>`;
       timers.forEach(el=>{ if(el) el.innerHTML = html; });
     }
-    function tick(){ render(target - new Date()); }
-    tick(); setInterval(tick,1000);
+    render(target - new Date());
+    setInterval(()=>render(target - new Date()),1000);
   </script>
 </body>
 </html>
